@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MovieFlix</title>
+
+<style>
+body{
+    background:black;
+    color:white;
+    font-family:Arial;
+    margin:0;
+}
+
+header{
+    padding:15px;
+    background:black;
+    color:red;
+    font-size:24px;
+}
+
+.grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.movie{
+    width:150px;
+    margin:10px;
+    background:#111;
+    border-radius:10px;
+    padding:10px;
+    text-align:center;
+}
+
+.movie img{
+    width:100%;
+    border-radius:10px;
+}
+
+button{
+    margin-top:5px;
+    padding:5px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.like{
+    color:red;
+}
+</style>
+</head>
+
+<body>
+
+<header>MOVIEFLIX</header>
+
+<div class="grid">
+
+<!-- ФИЛЬМ 1 -->
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/8h58PpX0D5JY5q0dS3E4kZcG7qA.jpg">
+<p>Inception</p>
+<button onclick="play('https://www.youtube.com/embed/YoHD9XEInc0')">▶ Trailer</button>
+<button class="like" onclick="like(this)">❤️ 0</button>
+</div>
+
+<!-- ФИЛЬМ 2 -->
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg">
+<p>Joker</p>
+<button onclick="play('https://www.youtube.com/embed/zAGVQLHvwOY')">▶ Trailer</button>
+<button class="like" onclick="like(this)">❤️ 0</button>
+</div>
+
+<!-- ФИЛЬМ 3 -->
+<div class="movie">
+<img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg">
+<p>Avengers</p>
+<button onclick="play('https://www.youtube.com/embed/TcMBFSGVi1c')">▶ Trailer</button>
+<button class="like" onclick="like(this)">❤️ 0</button>
+</div>
+
+<!-- ОСЫНЫ КӨШІРІП 30 РЕТ ҚОЙСАҢ БОЛАДЫ -->
+
+</div>
+
+<script>
+function like(btn){
+let count = btn.innerText.split(" ")[1];
+count++;
+btn.innerText = "❤️ " + count;
+}
+
+function play(link){
+window.open(link, "_blank");
+}
+</script>
+
+</body>
+</html>
